@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="main-content">
+    <header class="container header active" id="home">
+        <div class="header-content">
+            <div class="left-header">
+                <div class="h-shape"></div>
+                <div class="image">
+                    <img src="img/SelfPhoto2.jpg" alt="">
+                </div>
+            </div>
+            <div class="right-header">
+                <h1 class="name">
+                    Hello, I'm <span>Kai-Cheng Tsou.</span>
+                    A Level Designer.
+                </h1>
+                <p>
+                    I'm a Level Designer & Programmer, know a litte about Web development
+                    and 3D design, mostly do my works on Unreal Engine.
+                    
+                </p>
+                <div class="btn-con">
+                    <a href="file/Resume_Kai-Cheng Tsou_finale.pdf" target="_blank" class="main-btn">
+                        <span class="btn-text">Download Resume</span>
+                        <span class="btn-icon"><i class="fas fa-download"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="container about" id="about">
+            <div class="main-title">
+                <h2>About <span>me</span><span class="bg-text">Tommy</span></h2>
+            </div>
+            <div class="about-container">
+                <div class="left-about">
+                    <h4>Information About me</h4>
+                    <p>
+                        I am currently a senior studying game design at Purdue University.
+                        I have worked on several projects with my partner.
+                        This gives me a brief insight into what my role might be when I am working in a group.
+                        My Purdue experience has taught me many skills, including,
+                        Modeling, programming, and language skills could help me get started.
+                        In the future, I want to become an excellent game designer so that everyone can enjoy
+                        Playing the game that me and my partner
+                        Design. I am excited to learn more in the future.   
+                    </p>
+                    <div class="btn-con">
+                        <a href="file/Resume_Kai-Cheng Tsou_finale.pdf" target="_blank" class="main-btn">
+                            <span class="btn-text">Download Resume</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="right-about">
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text">10+</p>
+                            <p class="small-text">Projects <br /> Completed</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text">3+</p>
+                            <p class="small-text">Years of <br /> Unreal Engine</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text">2+</p>
+                            <p class="small-text">Years OF<br />Coding Experience</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text">2+</p>
+                            <p class="small-text">Years OF<br />Web Developer </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <section class="container portfolio" id="portfolio">
+            <div class="main-title">
+                <h2>My <span>Portfolio</span><span class="bg-text">My Work</span></h2>
+            </div>
+            <div class="portfolio-categories">
+                <button class="category-btn active-category" data-category="webapps">
+                    <i class="fas fa-laptop-code"></i> Web Apps
+                </button>
+                <button class="category-btn" data-category="games">
+                    <i class="fas fa-gamepad"></i> Games
+                </button>
+            </div>
+            
+            <!-- Web Apps Portfolio -->
+            <div class="portfolio-category-content active-category-content" id="webapps-portfolio">
+                <p class="port-text">
+                    Here are some of my web applications and projects.
+                </p>
+                <div class="portfolios">
+                    <div class="portfolio-item webapp-item" data-webapp="tommynews">
+                        <div class="image webapp-clickable">
+                            <img src="img/news.png" alt="湯米新聞 - Tommy News">
+                        </div>
+                        <div class="hover-items">
+                            <h3>湯米新聞 (Tommy News)</h3>
+                            <div class="icons">
+                                <button class="icon webapp-view-btn" data-webapp="tommynews" title="View Details">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://tommynews.up.railway.app/" target="_blank" class="icon" title="Visit Live Site" onclick="event.stopPropagation();">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item webapp-item" data-webapp="mbtiassistant">
+                        <div class="image webapp-clickable">
+                            <img src="img/mbti.png" alt="MBTI助手 - MBTI Assistant">
+                        </div>
+                        <div class="hover-items">
+                            <h3>MBTI助手 (MBTI Assistant)</h3>
+                            <div class="icons">
+                                <button class="icon webapp-view-btn" data-webapp="mbtiassistant" title="View Details">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://mbtit-tommy.up.railway.app/" target="_blank" class="icon" title="Visit Live Site" onclick="event.stopPropagation();">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item webapp-item" data-webapp="spindine">
+                        <div class="image webapp-clickable">
+                            <img src="img/spinedine.png" alt="Spin & Dine">
+                        </div>
+                        <div class="hover-items">
+                            <h3>Spin & Dine 🍽️</h3>
+                            <div class="icons">
+                                <button class="icon webapp-view-btn" data-webapp="spindine" title="View Details">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://spindine.netlify.app/" target="_blank" class="icon" title="Visit Live Site" onclick="event.stopPropagation();">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more web app portfolio items here -->
+                </div>
+            </div>
+            
+            <!-- Games Portfolio -->
+            <div class="portfolio-category-content" id="games-portfolio">
+                <p class="port-text">
+                    Here is some of my work that I've done in Unreal Engine.
+                </p>
+                <div class="portfolios">
+                    <div class="portfolio-item">
+                        <div class="image">
+                            <img src="img/iPhone.png" alt="">
+                        </div>
+                        <div class="hover-items">
+                            <h3>iPhone & Apple Watch</h3>
+                            <div class="icons">
+                                <a href="https://skfb.ly/6SsCP" target="_blank" class="icon">
+                                    <i class="fa fa-cube"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="image">
+                            <img src="img/Trial by Fire.jpg" alt="">
+                        </div>
+                        <div class="hover-items">
+                            <h3>Trial by Fire</h3>
+                            <div class="icons">
+                                <a href="https://youtu.be/gQxHYE5LvJs" target="_blank" class="icon">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <button class="btn-hover color-8" id="trialbyfire-btn">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="image">
+                            <img src="img/Ready to Rob.jpg" alt="">
+                        </div>
+                        <div class="hover-items">
+                            <h3>Ready to Rob?</h3>
+                            <div class="icons">
+                                <a href="https://youtu.be/eOL1Wy4G3nA" target="_blank" class="icon">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <button class="btn-hover color-8" id="readytorob-btn">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="image">
+                            <img src="img/Village Revenger.png" alt="">
+                        </div>
+                        <div class="hover-items">
+                            <h3>Village Revenger</h3>
+                            <div class="icons">
+                                <a href="https://youtu.be/gwKJbkWN3_Y" target="_blank" class="icon">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <button class="btn-hover color-8" id="villagerevenger-btn">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="image">
+                            <img src="img/Village Protector.png" alt="">
+                        </div>
+                        <div class="hover-items">
+                            <h3>Village Protector</h3>
+                            <div class="icons">
+                                <a href="https://youtu.be/8NQX7hXGex4" target="_blank" class="icon">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <button class="btn-hover color-8" id="villageprotector-btn">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="image">
+                            <img src="img/The Dark Cave.png" alt="">
+                        </div>
+                        <div class="hover-items">
+                            <h3>The Dark Cave</h3>
+                            <div class="icons">
+                                <a href="https://youtu.be/o_e9p0Lv7rg" target="_blank" class="icon">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <button class="btn-hover color-8" id="thedarkcave-btn">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="image">
+                            <img src="img/Future Mission.png" alt="">
+                        </div>
+                        <div class="hover-items">
+                            <h3>Future Mission</h3>
+                            <div class="icons">
+                                <a href="https://youtu.be/r1mkFyCOJxg" target="_blank" class="icon">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <button class="btn-hover color-8" id="futuremission-btn">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <section class="container contact" id="contact">
+            <div class="contact-container">
+                <div class="main-title">
+                    <h2>Contact <span>Me</span><span class="bg-text">Contact</span></h2>
+                </div>
+                <div class="contact-content-con">
+                    <div class="contact-intro">
+                        <h4>Get In Touch</h4>
+                        <p>
+                            I'm always open to discussing new opportunities, creative projects, or just having a chat. Feel free to reach out through any of the channels below!
+                        </p>
+                    </div>
+                    <div class="contact-info-grid">
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h5>Email</h5>
+                            <a href="mailto:tommy.870702@gmail.com">tommy.870702@gmail.com</a>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h5>TW Phone</h5>
+                            <a href="tel:+886966058989">+886 966058989</a>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h5>Education</h5>
+                            <p>Purdue University<br>West Lafayette</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-globe-africa"></i>
+                            </div>
+                            <h5>Languages</h5>
+                            <p>English, Chinese</p>
+                        </div>
+                    </div>
+                    <div class="contact-social-section">
+                        <h4>Connect With Me</h4>
+                        <div class="contact-social-icons">
+                            <a href="https://github.com/Kai-ChengTsou" target="_blank" class="social-icon github">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/tommy-tsou-aba0b9213/" target="_blank" class="social-icon linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UC9JAXbTbnC6XLvVBGTTvnUw" target="_blank" class="social-icon youtube">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://www.instagram.com/tommy__tsou/" target="_blank" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.facebook.com/tommy.tsou.3/" target="_blank" class="social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Projects-->
+        <section class="container TrialByFire" id="TrialByFire">
+            <div class="projects">
+                <h1 class="game-title">Trial<span> By Fire</span></h1>
+                <div class="intro"><p>This is my first project using Unreal Engine, it is a simple first-person game that makes with some meshes and also a little blueprint to make it more interesting.</p></div>
+                <div class="projects-main">
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Level</h2>
+                            <p class="explain-main">This is the whole-level design of this project, it is really a small level, the player can easier follow the route and win the game.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/Trial by fire1.png" >
+                        
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain2">
+                            <h2 class="explain-number">Top View</h2>
+                            <p class="explain-main">From the top view, the level design can be more precise, it starts from the bottom of the map and goes to the top of the map.</p>
+                        </div>
+                        <img class="projects-img leftOne" id="second" src="projects img/trial by fire2.png" >
+                    </div>
+                    <div>
+                        <video controls class="video">
+                            <source src="video/Trial By Fire.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <button class="btn-hover color-9" onclick="back()">Return to Main Page</button>
+            </div>
+            
+        </section>
+
+        <section class="container ReadyToRob" id="ReadyToRob">
+            <div class="projects">
+                <h1 class="game-title">Ready<span> To Rob?</span></h1>
+                <div class="intro"><p>This is a third-person game that is inspired by Mario Odyssey. The player will receive a main mission for them to do, and while in the mission the player can jump around and collect coins, stars, and also weapons.</p></div>
+                <div class="projects-main">
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Level</h2>
+                            <p class="explain-main">This is the whole map of this project, it is a playground in a city surrounded by water, player can explore any place they want in the city.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/ready to rob1.png" >
+                        
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain2">
+                            <h2 class="explain-number">Missions</h2>
+                            <p class="explain-main">There are missions for player to complete and they have to collect coins in order to finish the missions.</p>
+                        </div>
+                        <img class="projects-img" id="second" src="projects img/ready to rob3.gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Store UI</h2>
+                            <p class="explain-main">This is a User interface for buying hotdogs, the player can use the money they got to buy things.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/ready to rob2.gif" >
+                    </div>
+                    <div>
+                        <video controls class="video">
+                            <source src="video/Ready to Rob_.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <button class="btn-hover color-9" onclick="back()">Return to Main Page</button>
+            </div>
+        </section>
+
+    
+        <section class="container VillageRevenger" id="VillageRevenger">
+            <div class="projects">
+                <h1 class="game-title">Village<span> Revenger</span></h1>
+                <div class="intro"><p>This is a third-person game made with my partner, we are inspired by different RPG combat games such as Zelda. There are different levels in the game, the player has to use their combat stills in order to get to the boss and kill it.</p></div>
+                <div class="projects-main">
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Entrance</h2>
+                            <p class="explain-main">This is the beginning of the game which the player will start, there are stones on the ground for the player to get to the right place and do the right thing.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/village revenger1.png" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain2">
+                            <h2 class="explain-number">Entry Level</h2>
+                            <p class="explain-main">This is the entry level for the player to solve, it is a simple puzzle game, it can make the player ready to go inside the main level.</p>
+                        </div>
+                        <img class="projects-img" id="second" src="projects img/village revenger2.png" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Main Level</h2>
+                            <p class="explain-main">This is the main level that the player can go from here in many other levels including the boss level, it has lava below to prevent the player from going too far from the main level.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/village revenger3.png" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain2">
+                            <h2 class="explain-number">Boss level</h2>
+                            <p class="explain-main">This is where the player will fight the Kraken, the boss has different modes when its health gets lower by 50 percent it will become more robust, and the player can defeat the Kraken by attacking its tentacles.</p>
+                        </div>
+                        <img class="projects-img" id="second" src="projects img/village revenger4.png" >
+                    </div>
+                    <div>
+                        <video controls class="video">
+                            <source src="video/Village Revenger.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <button class="btn-hover color-9" onclick="back()">Return to Main Page</button>
+            </div>
+                
+        </section>
+        <section class="container VillageProtector" id="VillageProtector">
+            <div class="projects">
+                <h1 class="game-title">Village<span> Protector</span></h1>
+                <div class="intro"><p>This is a third-person game about a warrior trying to protect his village. There are different kinds of enemies on the road, the player should avoid getting killed by them. This project also enhanced my ability on using C++ in Unreal Engine.</p></div>
+                <div class="projects-main">
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Begin Conversation</h2>
+                            <p class="explain-main">This is the conversation in which the player gets information about the game, and the player will receive $100 to buy some items for fighting the enemies.</p>
+                        </div>
+                        <img class= "projects-img" src="projects img/village protector (2).gif" >            
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain2">
+                        <h2 class="explain-number">Pig Store</h2>
+                        <p class="explain-main">This is the place where the player can buy different items, the fireball can ignore the enemy's defense and deal 30 damage to the enemy, and the armor will increase the player's defense for one round.</p>
+                        </div>
+                        <img class="projects-img" id="second" src="projects img/village protector (3).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Fox</h2>
+                            <p class="explain-main">This is the first enemy that the player encounters, the player can choose whether they want to attack or defend, same as the enemy. Because the player has bought the armor at the store so the enemy can't deal much damage to the player.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/village protector (4).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain2">
+                        <h2 class="explain-number">Eagle Store</h2>
+                        <p class="explain-main">This is the second store that sells different items, the shield can block the enemy once. The player will have to buy the item for not to be defeated by the enemy.</p>
+                        </div>
+                        <img class="projects-img" id="second" src="projects img/village protector (5).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Wolf</h2>
+                            <p class="explain-main">This is the stronger enemy, which will deal more damage to the player, the player can use the shield that they bought to block the damage from the enemy and use a fireball to ignore the enemy's defense.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/village protector (6).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain2">
+                        <h2 class="explain-number">Danger Place</h2>
+                        <p class="explain-main">After defeating the wolf, the player will be teleported here and the player has learned a new skill that fires a fireball, by using this the player can kill the enemy and get the key for going back to the village.</p>
+                        </div>
+                        <img class="projects-img" id="second" src="projects img/village protector (1).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">C++</h2>
+                            <p class="explain-main">This is the part that I use C++, I creatre two function in unreal engine, one for the player attack damage and one for the enemy, by declare some variable inside the function, it become more easier to use in the blueprint.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/village protector code (2).png" > 
+                    </div>
+                    <div>
+                        <video controls class="video">
+                            <source src="video/Village Protector.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <button class="btn-hover color-9" onclick="back()">Return to Main Page</button>
+            </div>
+                
+        </section>
+        <section class="container TheDarkCave" id="TheDarkCave">
+            <div class="projects">
+                <h1 class="game-title">The<span> Dark Cave</span></h1>
+                <div class="intro"><p>This is a third-person project that is mainly focused on the audio component, there are three level for the player to play, each of the level indicate to different things that a warrior required, which is skills, bravery and intelligence. The audio editing is mostly made by Audacity and Reaper.</p></div>
+                <div class="projects-main">
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Main Level</h2>
+                            <p class="explain-main">This is the place where the player starts and also where the player can go to other maps.</p>
+                        </div>
+                        <img class= "projects-img" src="projects img/the dark cave (3).gif" >
+                    </div>
+                    <div class="inside2">
+                        <div class="projects-explain2">
+                        <h2 class="explain-number">Skills Level</h2>
+                        <p class="explain-main">This is a level that required the player to have character movement skills to pass the level, there are different stages for the player to play. For the ambient sound, I combined the wind sound and the birds sound to make a sky ambient. There is also some sound effect that I made, such as the piano sound.</p>
+                        </div>
+                        <img class="projects-img" id="skilllevel-img" src="projects img/the dark cave (2).png" >
+                    </div>
+                    <div class="audio-component" id="audio-first">
+                        <div id="audio-component-left">
+                            <p>sky_ambient</p>
+                            <audio controls>
+                                <source src="audio/sky_ambient.wav" type="audio/wav">
+                            </audio>
+                            <p>piano_f</p>
+                            <audio controls>
+                                <source src="audio/piano_f.wav" type="audio/wav">
+                            </audio>
+                        </div>
+                        <div id="audio-component-right">
+                            <p>piano_b</p>
+                            <audio controls>
+                                <source src="audio/piano_b.wav" type="audio/wav">
+                            </audio>
+                            <p>piano_end</p>
+                            <audio controls>
+                                <source src="audio/piano_end.wav" type="audio/wav">
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="inside" id="maze">
+                        <div class="projects-explain1" id="maze-explain">
+                            <h2 class="explain-number">Maze</h2>
+                            <p class="explain-main">This is a small Maze level that required the player to be brave enough to finish it, there are zombies in the game trying to scare the player. At the end of the level, there are blocks for the player to choose, the player has to choose the right one to pass, it is the idea I get from "Squid Game".</p>
+                        </div>
+                        <div class="maze-img">
+                            <img class="projects-img" src="projects img/the dark cave (3).png" >
+                            <img class="projects-img" src="projects img/the dark cave (4).gif" >
+                        </div>
+                    </div>
+                    <div class="inside" id="laser">
+                        <div class="projects-explain2" id="laser-explain">
+                            <h2 class="explain-number">Laser</h2>
+                            <p class="explain-main">This is a laser level that required the player to use their brain to solve the puzzle, the player has to utilize the mirror in the room and try to match the laser to the right color.</p>
+                        </div>
+                        <div id="laser-img">
+                            <img class="projects-img" id="second" src="projects img/the dark cave (4).png" >
+                            <img class="projects-img" id="second" src="projects img/the dark cave (1).gif" >
+                        </div>
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Dialog In Game</h2>
+                            <p class="explain-main">These are the dialog in the game that I direct my friend to record for me, I have edited the sound lower the pitch of his sound in order to fit the game.</p>
+                        </div>
+                        <div class="audio-component2">
+                            <div class="audio-component-1">
+                                <p>Welcome</p>
+                                <audio controls>
+                                    <source src="audio/Welcome.mp3" type="audio/mp3">
+                                </audio>
+                                <p>RunOrDie</p>
+                                <audio controls>
+                                    <source src="audio/Keep Running - Copy.mp3" type="audio/mp3">
+                                </audio>
+                            </div>
+                            <div class="audio-component-2">
+                                <p>Zombies</p>
+                                <audio controls>
+                                    <source src="audio/Zombies.mp3" type="audio/mp3">
+                                </audio>
+                                <p>Puzzle</p>
+                                <audio controls>
+                                    <source src="audio/Puzzle.mp3" type="audio/mp3">
+                                </audio>
+                            </div>
+                            <div class="audio-component-3">
+                                <p>Escape</p>
+                                <audio controls>
+                                    <source src="audio/Escape.mp3" type="audio/mp3">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <video controls class="video">
+                            <source src="video/The Dark Cave.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <button class="btn-hover color-9" onclick="back()">Return to Main Page</button>
+            </div>
+                
+        </section>
+        <section class="container FutureMission" id="FutureMission">
+            <div class="projects">
+                <h1 class="game-title">Future<span> Mission</span></h1>
+                <div class="intro"><p>This is a third-person Unreal Engine project that is more focused on the blueprint, there are different stages and levels for the player to play. The game starts with accepting the mission from a person and the player will be going through various stages or levels on the map. </p></div>
+                <div class="projects-main">
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Begin</h2>
+                            <p class="explain-main">To start the game, the player has to meet the person to know the mission and start to solve it.</p>
+                        </div>
+                        <img class= "projects-img" src="projects img/future mission (6).gif">                     
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain2">
+                            <h2 class="explain-number">Math Evil</h2>
+                            <p class="explain-main">This is a small-level test for the player some calculations, the player has to find the correct number according to the questions on the wall.</p>
+                        </div>
+                        <img class="projects-img" id="second" src="projects img/future mission (7).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Time Machine</h2>
+                            <p class="explain-main">This is a transition that the player is going from here to another level (future world) by entering the time machine.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/future mission (8).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain2">
+                            <h2 class="explain-number">Bounce Hell</h2>
+                            <p class="explain-main">This is in the future world. In their future world, there are two main levels in which the player can get the key to open the treasure. This one is the bounce hell, the player has to bounce to the platform to get the key without touching the ground.</p>
+                        </div>
+                        <img class="projects-img" id="second" src="projects img/future mission (9).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Mirror Maze</h2>
+                            <p class="explain-main">This is the mirror maze the player is stuck in the maze that is full of mirrors, and the player has to find the location of the key and found the direction of the exit. it is harder than it thinks because it is easily getting confused in the mirror maze.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/future mission (1).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain2">
+                            <h2 class="explain-number">Moving Elevator</h2>
+                            <p class="explain-main">After solving two major levels, the moving elevator will appear, and the player has to look for the code that is hidden in the map, which is 98 highlighted with glowing pink.</p>
+                        </div>
+                        <img class="projects-img" id="second" src="projects img/future mission (2).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">07 Password</h2>
+                            <p class="explain-main">This is the place where the player has to enter the password that they see on the map to go on the mission.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/future mission (3).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain2">
+                            <h2 class="explain-number">Laser Room</h2>
+                            <p class="explain-main">This is a place full of lasers, the player will get killed if they touch the laser, and they have to avoid the laser and get to the checkpoint.</p>
+                        </div>
+                        <img class="projects-img" id="second" src="projects img/future mission (4).gif" >
+                    </div>
+                    <div class="inside">
+                        <div class="projects-explain1">
+                            <h2 class="explain-number">Mine Road</h2>
+                            <p class="explain-main">There are mines on the ground which are mentioned in different materials, also the wall beside will be pushing inside and make the road getting narrower. After this, the player will be able to open the treasure at the end by using the keys.</p>
+                        </div>
+                        <img class="projects-img" src="projects img/future mission (5).gif" >
+                    </div>
+                    
+                </div>
+                <div>
+                    <video controls class="video">
+                        <source src="video/Future Mission.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <button class="btn-hover color-9" onclick="back()">Return to Main Page</button>
+            </div>
+                
+        </section>
+    </main>
+    
+        
+    
+
+    <div class="controls">
+        <div class="control active-btn" data-id="home" id="home-btn">
+            <i class="fas fa-home"></i>
+        </div>
+        <div class="control" data-id="about" id="about-btn">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="control" data-id="portfolio" id="portfolio-btn">
+            <i class="fas fa-briefcase"></i>
+        </div>
+        <div class="control" data-id="contact" id="contact-btn">
+            <i class="fas fa-envelope-open"></i>
+        </div>
+    </div>
+
+    <div class="controls2">
+        <div class="control" data-id="TrialByFire" id="trial-by-fire-btn" >
+            <div>TBF</div>
+        </div>
+        <div class="control" data-id="ReadyToRob" id="ready-to-rob-btn">
+            <div>RTR</div>
+        </div>
+        <div class="control" data-id="VillageRevenger" id="village-revenger-btn">
+            <div>VR</div>
+        </div>
+        <div class="control" data-id="VillageProtector" id="village-protector-btn" >
+            <div>VP</div>
+        </div>
+        <div class="control" data-id="TheDarkCave" id="the-dark-cave-btn">
+            <div>TDC</div>
+        </div>
+        <div class="control" data-id="FutureMission" id="future-mission-btn">
+            <div>FM</div>
+        </div>
+    </div>
+    
+    <div class="theme-btn">
+        <i class="fas fa-adjust"></i>
+    </div>
+
+    <!-- Web App Modal -->
+    <div class="webapp-modal" id="webapp-modal">
+        <div class="webapp-modal-content">
+            <span class="webapp-modal-close">&times;</span>
+            <div class="webapp-modal-body" id="webapp-modal-body">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script defer src="app.js"></script>
+    <script src="projects.js"></script>
+</body>
+</html>
