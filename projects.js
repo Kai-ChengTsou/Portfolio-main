@@ -26,48 +26,74 @@ const futureMissionPage = document.getElementById('FutureMission');
 const controlElement = document.querySelector('.control')
 
 
-trialByFireBtn.addEventListener('click', ()=>{
-    change(trialByFirePage, '#trial-by-fire-btn')
-})
+if (trialByFireBtn && trialByFirePage) {
+    trialByFireBtn.addEventListener('click', ()=>{
+        change(trialByFirePage, '#trial-by-fire-btn')
+    })
+}
 
-readyToRobBtn.addEventListener('click', function(){
-    change(readyToRobPage, '#ready-to-rob-btn')
-})
+if (readyToRobBtn && readyToRobPage) {
+    readyToRobBtn.addEventListener('click', function(){
+        change(readyToRobPage, '#ready-to-rob-btn')
+    })
+}
 
-villageRevengerBtn.addEventListener('click', function(){
-    change(villageRevengerPage, '#village-revenger-btn')
-})
+if (villageRevengerBtn && villageRevengerPage) {
+    villageRevengerBtn.addEventListener('click', function(){
+        change(villageRevengerPage, '#village-revenger-btn')
+    })
+}
 
-villageProtectorBtn.addEventListener('click', function(){
-    change(villageProtectorPage, '#village-protector-btn')
-})
+if (villageProtectorBtn && villageProtectorPage) {
+    villageProtectorBtn.addEventListener('click', function(){
+        change(villageProtectorPage, '#village-protector-btn')
+    })
+}
 
-theDarkCaveBtn.addEventListener('click', function(){
-    change(theDarkCavePage, '#the-dark-cave-btn')
-})
+if (theDarkCaveBtn && theDarkCavePage) {
+    theDarkCaveBtn.addEventListener('click', function(){
+        change(theDarkCavePage, '#the-dark-cave-btn')
+    })
+}
 
-futureMissionBtn.addEventListener('click', function(){
-    change(futureMissionPage, '#future-mission-btn')
-})
+if (futureMissionBtn && futureMissionPage) {
+    futureMissionBtn.addEventListener('click', function(){
+        change(futureMissionPage, '#future-mission-btn')
+    })
+}
 function change(name, btnName){
-    document.querySelector(".active").classList.remove("active");
+    if (!name) return;
+    const activeSection = document.querySelector(".active");
+    const controls2 = document.querySelector(".controls2");
+    const controls = document.querySelector(".controls");
+    const activeBtn = document.querySelector(".active-btn");
+    const targetBtn = document.querySelector(btnName);
+    
+    if (activeSection) activeSection.classList.remove("active");
     name.classList.add('active');
-    document.querySelector(".controls2").style.display = 'flex';
-    document.querySelector(".controls").style.display = 'none';
-    document.querySelector(".active-btn").classList.remove("active-btn");
-    document.querySelector(btnName).classList.add("active-btn");
+    if (controls2) controls2.style.display = 'flex';
+    if (controls) controls.style.display = 'none';
+    if (activeBtn) activeBtn.classList.remove("active-btn");
+    if (targetBtn) targetBtn.classList.add("active-btn");
 }
 
 
 const portfolioPage = document.getElementById('portfolio')
 
 function back() {
-    document.querySelector(".active").classList.remove("active");
+    if (!portfolioPage) return;
+    const activeSection = document.querySelector(".active");
+    const controls = document.querySelector(".controls");
+    const controls2 = document.querySelector(".controls2");
+    const activeBtn = document.querySelector(".active-btn");
+    const portfolioBtn = document.querySelector("#portfolio-btn");
+    
+    if (activeSection) activeSection.classList.remove("active");
     portfolioPage.classList.add('active');
-    document.querySelector(".controls").style.display = 'flex';
-    document.querySelector(".controls2").style.display = 'none';
-    document.querySelector(".active-btn").classList.remove("active-btn");
-    document.querySelector("#portfolio-btn").classList.add("active-btn");
+    if (controls) controls.style.display = 'flex';
+    if (controls2) controls2.style.display = 'none';
+    if (activeBtn) activeBtn.classList.remove("active-btn");
+    if (portfolioBtn) portfolioBtn.classList.add("active-btn");
   };
 
 

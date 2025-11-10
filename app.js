@@ -1,15 +1,22 @@
 (function () {
     [...document.querySelectorAll(".control")].forEach(button => {
         button.addEventListener("click", function() {
-            document.querySelector(".active-btn").classList.remove("active-btn");
+            const activeBtn = document.querySelector(".active-btn");
+            const activeSection = document.querySelector(".active");
+            const targetSection = document.getElementById(button.dataset.id);
+            
+            if (activeBtn) activeBtn.classList.remove("active-btn");
             this.classList.add("active-btn");
-            document.querySelector(".active").classList.remove("active");
-            document.getElementById(button.dataset.id).classList.add("active");
+            if (activeSection) activeSection.classList.remove("active");
+            if (targetSection) targetSection.classList.add("active");
         })
     });
-    document.querySelector(".theme-btn").addEventListener("click", () => {
-        document.body.classList.toggle("light-mode");
-    })
+    const themeBtn = document.querySelector(".theme-btn");
+    if (themeBtn) {
+        themeBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+        });
+    }
 })();
 
 // Portfolio Category Switching
@@ -48,7 +55,7 @@ const webAppData = {
         idea: "The idea behind Tommy News was to create a one-stop platform for Taiwanese news readers. Instead of visiting multiple news websites, users can access news from 中央社, 自由時報, ETtoday, 台視, 新頭殼, and BBC News all in one place. The AI summarization feature helps users quickly understand news articles without reading the full content, making news consumption more efficient.",
         liveUrl: "https://tommynews.up.railway.app/",
         githubUrl: null,
-        skills: ["JavaScript", "React", "Node.js", "API Integration", "AI/ML", "Web Scraping", "Responsive Design"],
+        skills: ["AI Integration", "AI/ML", "Natural Language Processing", "AI-Powered Summarization", "API Integration", "React", "JavaScript"],
         preview: "https://tommynews.up.railway.app/"
     },
     mbtiassistant: {
@@ -57,7 +64,7 @@ const webAppData = {
         idea: "The MBTI Assistant was created to help people better understand themselves and others through personality type analysis. Users can explore two main features: '自我了解' (Self Understanding) for personal insights across work, relationships, friendships, family, strengths, and weaknesses; and '與人相處' (Interpersonal Relationships) to analyze compatibility and dynamics between different MBTI types in various relationship contexts (family, friends, romantic partners, colleagues, classmates). This tool makes personality psychology accessible and practical for everyday use.",
         liveUrl: "https://mbtit-tommy.up.railway.app/",
         githubUrl: null,
-        skills: ["JavaScript", "React", "Node.js", "AI/ML", "Personality Psychology", "Interactive UI", "Responsive Design"],
+        skills: ["AI Integration", "AI/ML", "AI-Powered Analysis", "Personality Psychology", "React", "JavaScript", "Interactive UI"],
         preview: "https://mbtit-tommy.up.railway.app/"
     },
     spindine: {
@@ -66,8 +73,35 @@ const webAppData = {
         idea: "Spin & Dine was created to solve the common problem of 'where should we eat?' by making restaurant selection fun and exciting. Instead of endless scrolling through restaurant options, users can set their preferences (minimum rating, maximum distance, restaurant status) and let a spinning wheel decide. The app integrates with location services to find nearby restaurants, filters them based on user criteria, and then randomly selects one through an engaging spinning wheel interface. This makes dining decisions quick, fun, and removes the decision fatigue that often comes with choosing where to eat.",
         liveUrl: "https://spindine.netlify.app/",
         githubUrl: null,
-        skills: ["JavaScript", "React", "Location API", "Google Maps API", "Restaurant API", "Interactive UI", "Responsive Design"],
+        skills: ["React", "JavaScript", "Location API", "Google Maps API", "Restaurant API", "Interactive UI"],
         preview: "https://spindine.netlify.app/"
+    },
+    englishlearning: {
+        title: "English Learning Hub 🎓",
+        description: "An interactive English learning platform that helps users practice natural conversations in 30 common everyday situations. The app features guided dialogues, free talk mode, and vocabulary building to improve pronunciation, build vocabulary, and gain confidence speaking English.",
+        idea: "English Learning Hub was created to make English conversation practice accessible and practical. Instead of traditional textbook learning, users can practice real-world conversations in situations they'll actually encounter - like ordering at a restaurant, asking for directions, or having a job interview. The app offers two learning modes: Guided Dialogues for structured practice with common phrases, and Free Talk Mode for spontaneous conversation practice. This approach helps learners build confidence and fluency by practicing in context, making language learning more engaging and effective than memorizing vocabulary lists.",
+        liveUrl: "https://englishlearningconversation.netlify.app/",
+        githubUrl: null,
+        skills: ["AI Integration", "AI/ML", "Conversational AI", "AI-Powered Dialogues", "Language Learning", "React", "JavaScript"],
+        preview: "https://englishlearningconversation.netlify.app/"
+    },
+    coverletter: {
+        title: "Cover Letter Generator 📝",
+        description: "An AI-powered cover letter generation tool that helps job seekers create personalized, professional cover letters tailored to specific job applications. The app uses advanced AI to analyze job descriptions and generate compelling cover letters that highlight relevant skills and experiences.",
+        idea: "The Cover Letter Generator was created to solve the time-consuming problem of writing customized cover letters for each job application. Instead of starting from scratch every time, users can input their information and job details, and the AI generates a professional, tailored cover letter. This tool helps job seekers save time while ensuring their cover letters are well-written, relevant, and highlight the most important qualifications for each position. The app makes the job application process more efficient and increases the chances of standing out to potential employers.",
+        liveUrl: "https://tommycoverletter.up.railway.app/",
+        githubUrl: null,
+        skills: ["AI Integration", "AI/ML", "Natural Language Processing", "AI-Powered Generation", "Document Generation", "React", "JavaScript"],
+        preview: "https://tommycoverletter.up.railway.app/"
+    },
+    taro: {
+        title: "Tommy的神秘塔羅 (Tommy's Mystical Tarot) 🔮",
+        description: "A comprehensive mystical divination platform featuring tarot card readings, life path number calculations, and horoscope predictions. The app provides personalized spiritual guidance through interactive tarot readings, numerology insights, and daily/weekly/monthly/yearly horoscope forecasts for all zodiac signs.",
+        idea: "Tommy's Mystical Tarot was created to bring ancient divination practices into the modern digital age. The app combines three powerful mystical tools: Tarot Cards for guidance on family, relationships, career, and general life questions; Life Path Numbers (Numerology) to reveal personality traits, talents, and life purpose based on birth dates; and Horoscope readings for all 12 zodiac signs with different time periods. Users can focus on their questions while selecting cards, receive AI-powered interpretations, and explore their spiritual journey through multiple divination methods. This makes mystical guidance accessible, interactive, and personalized for everyone seeking wisdom and insight.",
+        liveUrl: "https://tommytaro.up.railway.app/",
+        githubUrl: null,
+        skills: ["AI Integration", "AI/ML", "AI-Powered Interpretations", "Natural Language Processing", "React", "JavaScript", "Interactive UI"],
+        preview: "https://tommytaro.up.railway.app/"
     }
 };
 
@@ -77,10 +111,13 @@ const webAppData = {
     const closeBtn = document.querySelector('.webapp-modal-close');
     const viewButtons = document.querySelectorAll('.webapp-view-btn');
 
+    // Early return if essential elements are missing
+    if (!modal || !modalBody) return;
+
     // Open modal function
     function openModal(webappId) {
         const appData = webAppData[webappId];
-        if (!appData) return;
+        if (!appData || !modal || !modalBody) return;
 
         modalBody.innerHTML = `
             <div class="webapp-modal-header">
@@ -88,7 +125,17 @@ const webAppData = {
             </div>
             <div class="webapp-modal-preview">
                 <div class="iframe-loading">Loading preview...</div>
-                <iframe src="${appData.preview}" frameborder="0" allowfullscreen loading="lazy" onload="this.parentElement.querySelector('.iframe-loading').style.display='none';"></iframe>
+                <iframe src="${appData.preview}" frameborder="0" allowfullscreen loading="lazy" onload="
+                    const loading = this.parentElement.querySelector('.iframe-loading');
+                    const overlay = this.parentElement.querySelector('.webapp-modal-overlay');
+                    if (loading) loading.style.display = 'none';
+                    if (overlay) {
+                        setTimeout(() => {
+                            overlay.style.opacity = '0';
+                            overlay.style.pointerEvents = 'none';
+                        }, 2000);
+                    }
+                "></iframe>
                 <div class="webapp-modal-overlay">
                     <a href="${appData.liveUrl}" target="_blank" class="webapp-visit-btn">
                         <i class="fas fa-external-link-alt"></i> Visit Live Site
@@ -130,6 +177,7 @@ const webAppData = {
 
     // Close modal function
     function closeModal() {
+        if (!modal) return;
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
@@ -166,7 +214,9 @@ const webAppData = {
         });
     });
 
-    closeBtn.addEventListener('click', closeModal);
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
 
     // Close modal when clicking outside
     window.addEventListener('click', function(event) {
@@ -177,9 +227,56 @@ const webAppData = {
 
     // Close modal with Escape key
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modal.style.display === 'flex') {
+        if (event.key === 'Escape' && modal && modal.style.display === 'flex') {
             closeModal();
         }
+    });
+})();
+
+// Scroll-triggered animations
+(function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe portfolio items
+    document.addEventListener('DOMContentLoaded', function() {
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        portfolioItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(50px)';
+            item.style.transition = `all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.1}s`;
+            observer.observe(item);
+        });
+
+        // Observe contact cards
+        const contactCards = document.querySelectorAll('.contact-card');
+        contactCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        // Observe about items
+        const aboutItems = document.querySelectorAll('.about-item');
+        aboutItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = `all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.1}s`;
+            observer.observe(item);
+        });
     });
 })();
 
