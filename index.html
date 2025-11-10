@@ -813,12 +813,10 @@
                 <div class="resume-modal-header">
                     <h2>My <span>Resume</span></h2>
                 </div>
-                <div class="resume-viewer">
+                <div class="resume-viewer" id="resume-viewer">
                     <div class="resume-loading">Loading resume...</div>
-                    <iframe src="file/Resume_AI_pm.pdf#toolbar=0&amp;navpanes=0&amp;scrollbar=0&amp;view=FitH" frameborder="0" allowfullscreen loading="lazy" onload="
-                        const loading = this.parentElement.querySelector('.resume-loading');
-                        if (loading) loading.style.display = 'none';
-                    "></iframe>
+                    <embed src="file/Resume_AI_pm.pdf#toolbar=0&amp;navpanes=0&amp;scrollbar=0&amp;view=FitH" type="application/pdf" id="resume-embed">
+                    <iframe src="file/Resume_AI_pm.pdf#toolbar=0&amp;navpanes=0&amp;scrollbar=0&amp;view=FitH" frameborder="0" allowfullscreen loading="lazy" style="display: none;" id="resume-iframe"></iframe>
                 </div>
                 <div class="resume-download-section">
                     <a href="file/Resume_AI_pm.pdf" download="Kai-Cheng_Tsou_Resume.pdf" class="resume-download-btn">
@@ -833,3 +831,4 @@
     <script src="projects.js"></script>
 </body>
 </html>
+

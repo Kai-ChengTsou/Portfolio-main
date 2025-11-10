@@ -287,15 +287,66 @@ const webAppData = {
     const resumeModal = document.getElementById('resume-modal');
     const resumeCloseBtn = document.querySelector('.resume-modal-close');
     const viewResumeBtns = document.querySelectorAll('#view-resume-btn, #view-resume-btn-about');
+    const resumeViewer = document.getElementById('resume-viewer');
+    const resumeEmbed = document.getElementById('resume-embed');
+    const resumeIframe = document.getElementById('resume-iframe');
+    const resumeLoading = resumeViewer ? resumeViewer.querySelector('.resume-loading') : null;
 
     // Early return if essential elements are missing
     if (!resumeModal) return;
+
+    // Handle PDF loading
+    function handleResumeLoad() {
+        if (resumeLoading) {
+            resumeLoading.style.display = 'none';
+        }
+    }
+
+    // Handle PDF error - fallback to iframe
+    function handleResumeError() {
+        if (resumeLoading) {
+            resumeLoading.style.display = 'none';
+        }
+        if (resumeEmbed) {
+            resumeEmbed.style.display = 'none';
+        }
+        if (resumeIframe) {
+            resumeIframe.style.display = 'block';
+            resumeIframe.onload = handleResumeLoad;
+        }
+    }
+
+    // Set up event listeners for PDF elements
+    if (resumeEmbed) {
+        resumeEmbed.onload = handleResumeLoad;
+        resumeEmbed.onerror = handleResumeError;
+    }
+    
+    if (resumeIframe) {
+        resumeIframe.onload = function() {
+            handleResumeLoad();
+            if (resumeEmbed) {
+                resumeEmbed.style.display = 'none';
+            }
+        };
+    }
 
     // Open resume modal function
     function openResumeModal() {
         if (!resumeModal) return;
         resumeModal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        
+        // Reset viewer state when opening
+        if (resumeLoading) {
+            resumeLoading.style.display = 'block';
+        }
+        if (resumeEmbed) {
+            resumeEmbed.style.display = 'block';
+        }
+        if (resumeIframe) {
+            resumeIframe.style.display = 'none';
+        }
     }
 
     // Close resume modal function
