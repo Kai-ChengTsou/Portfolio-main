@@ -282,6 +282,60 @@ const webAppData = {
 
 
 
+// Resume Modal System
+(function () {
+    const resumeModal = document.getElementById('resume-modal');
+    const resumeCloseBtn = document.querySelector('.resume-modal-close');
+    const viewResumeBtns = document.querySelectorAll('#view-resume-btn, #view-resume-btn-about');
+
+    // Early return if essential elements are missing
+    if (!resumeModal) return;
+
+    // Open resume modal function
+    function openResumeModal() {
+        if (!resumeModal) return;
+        resumeModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close resume modal function
+    function closeResumeModal() {
+        if (!resumeModal) return;
+        resumeModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Event listeners for view resume buttons
+    viewResumeBtns.forEach(btn => {
+        if (btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                openResumeModal();
+            });
+        }
+    });
+
+    // Close button event listener
+    if (resumeCloseBtn) {
+        resumeCloseBtn.addEventListener('click', closeResumeModal);
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target === resumeModal) {
+            closeResumeModal();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && resumeModal && resumeModal.style.display === 'flex') {
+            closeResumeModal();
+        }
+    });
+})();
+
 // const sections = document.querySelectorAll('.section');
 // const sectBtns = document.querySelectorAll('.controls');
 // const sectBtn = document.querySelectorAll('.control');
