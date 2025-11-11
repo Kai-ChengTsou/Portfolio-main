@@ -24,6 +24,28 @@
     const categoryButtons = document.querySelectorAll('.category-btn');
     const categoryContents = document.querySelectorAll('.portfolio-category-content');
     
+    // Function to instantly show portfolio items in active category
+    function showPortfolioItemsInstantly(activeContent) {
+        if (!activeContent) return;
+        const portfolioItems = activeContent.querySelectorAll('.portfolio-item');
+        portfolioItems.forEach((item) => {
+            // Stop observing this item if observer exists
+            if (window.portfolioObserver) {
+                window.portfolioObserver.unobserve(item);
+            }
+            
+            // Set transition to 'none' FIRST to prevent any CSS transitions
+            item.style.transition = 'none';
+            
+            // Then immediately set opacity and transform (synchronously, no delay)
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+            
+            // Force a reflow to ensure styles are applied immediately
+            void item.offsetHeight;
+        });
+    }
+    
     categoryButtons.forEach(button => {
         button.addEventListener('click', function() {
             const targetCategory = this.dataset.category;
@@ -42,6 +64,8 @@
             const targetContent = document.getElementById(`${targetCategory}-portfolio`);
             if (targetContent) {
                 targetContent.classList.add('active-category-content');
+                // Immediately show portfolio items without animation
+                showPortfolioItemsInstantly(targetContent);
             }
         });
     });
@@ -242,6 +266,11 @@ const webAppData = {
 
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
+            // Skip game blocks - they should never be observed
+            if (entry.target.classList.contains('inside') || entry.target.classList.contains('inside2')) {
+                observer.unobserve(entry.target);
+                return;
+            }
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
@@ -249,33 +278,168 @@ const webAppData = {
             }
         });
     }, observerOptions);
+    
+    // Expose observer globally so category switching can access it
+    window.portfolioObserver = observer;
 
-    // Observe portfolio items
-    document.addEventListener('DOMContentLoaded', function() {
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
+    // Function to animate elements in a section
+    function animateSectionElements(section) {
+        if (!section) return;
+        
+        // Animate portfolio items
+        const portfolioItems = section.querySelectorAll('.portfolio-item');
         portfolioItems.forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(50px)';
-            item.style.transition = `all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.1}s`;
-            observer.observe(item);
+            // Check if this portfolio item is in an active category content (webapps or games)
+            const parentCategoryContent = item.closest('.portfolio-category-content');
+            const isInActiveCategory = parentCategoryContent && parentCategoryContent.classList.contains('active-category-content');
+            
+            // Reset and observe if not already visible
+            if (item.style.opacity !== '1') {
+                // If in active category, show instantly without animation
+                if (isInActiveCategory) {
+                    // Stop observing this item
+                    observer.unobserve(item);
+                    
+                    // Set transition to 'none' FIRST to prevent any CSS transitions
+                    item.style.transition = 'none';
+                    
+                    // Then immediately set opacity and transform (synchronously, no delay)
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                    
+                    // Force a reflow to ensure styles are applied immediately
+                    void item.offsetHeight;
+                } else {
+                    // For items not in active category, use normal animation
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(50px)';
+                    item.style.transition = `all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.1}s`;
+                    
+                    // Check if element is already in viewport
+                    const rect = item.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                    
+                    if (isVisible) {
+                        // Immediately show if already visible
+                        requestAnimationFrame(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        });
+                    } else {
+                        // Observe if not visible yet
+                        observer.observe(item);
+                    }
+                }
+            }
         });
 
-        // Observe contact cards
-        const contactCards = document.querySelectorAll('.contact-card');
+        // Animate project content blocks (.inside elements) - these are the main issue
+        const projectBlocks = section.querySelectorAll('.inside, .inside2');
+        if (projectBlocks.length > 0) {
+            // For game sections, show ALL blocks instantly without animation
+            // This matches the behavior of web apps where all items appear at once
+            projectBlocks.forEach((block) => {
+                // First, stop observing this block if it's being observed
+                observer.unobserve(block);
+                
+                // Set transition to 'none' FIRST to prevent any CSS transitions
+                block.style.transition = 'none';
+                
+                // Then immediately set opacity and transform (synchronously, no delay)
+                block.style.opacity = '1';
+                block.style.transform = 'translateY(0)';
+                
+                // Force a reflow to ensure styles are applied immediately
+                void block.offsetHeight;
+            });
+        }
+
+        // Animate contact cards
+        const contactCards = section.querySelectorAll('.contact-card');
         contactCards.forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = `all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.1}s`;
-            observer.observe(card);
+            if (card.style.opacity !== '1') {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.1}s`;
+                
+                const rect = card.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isVisible) {
+                    requestAnimationFrame(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    });
+                } else {
+                    observer.observe(card);
+                }
+            }
         });
 
-        // Observe about items
-        const aboutItems = document.querySelectorAll('.about-item');
+        // Animate about items
+        const aboutItems = section.querySelectorAll('.about-item');
         aboutItems.forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(30px)';
-            item.style.transition = `all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.1}s`;
-            observer.observe(item);
+            if (item.style.opacity !== '1') {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = `all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.1}s`;
+                
+                const rect = item.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isVisible) {
+                    requestAnimationFrame(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    });
+                } else {
+                    observer.observe(item);
+                }
+            }
+        });
+    }
+
+    // Initial setup on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const activeSection = document.querySelector('.active');
+        if (activeSection) {
+            animateSectionElements(activeSection);
+        }
+    });
+
+    // Watch for section changes
+    const sectionObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(mutation => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                const target = mutation.target;
+                if (target.classList.contains('active')) {
+                    // For game sections, handle immediately without delay
+                    const hasGameBlocks = target.querySelectorAll('.inside, .inside2').length > 0;
+                    
+                    if (hasGameBlocks) {
+                        // For game sections, call immediately (synchronously)
+                        animateSectionElements(target);
+                    } else {
+                        // For other sections, use requestAnimationFrame
+                        requestAnimationFrame(() => {
+                            requestAnimationFrame(() => {
+                                animateSectionElements(target);
+                            });
+                        });
+                    }
+                }
+            }
+        });
+    });
+
+    // Observe all sections for class changes
+    document.addEventListener('DOMContentLoaded', function() {
+        const allSections = document.querySelectorAll('.container');
+        allSections.forEach(section => {
+            sectionObserver.observe(section, {
+                attributes: true,
+                attributeFilter: ['class']
+            });
         });
     });
 })();
