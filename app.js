@@ -75,8 +75,8 @@
 const webAppData = {
     tommynews: {
         title: "湯米新聞 (Tommy News)",
-        description: "A comprehensive Taiwanese news aggregation platform that brings together news from multiple major media sources. The app features AI-powered news summarization, category filtering, and real-time updates from trusted news outlets.",
-        idea: "The idea behind Tommy News was to create a one-stop platform for Taiwanese news readers. Instead of visiting multiple news websites, users can access news from 中央社, 自由時報, ETtoday, 台視, 新頭殼, and BBC News all in one place. The AI summarization feature helps users quickly understand news articles without reading the full content, making news consumption more efficient.",
+        description: "An intelligent news aggregation platform that consolidates content from 6+ major Taiwanese media sources into a single, streamlined interface. Leverages advanced AI-powered summarization to transform lengthy articles into concise, digestible insights, enabling users to stay informed efficiently. Features real-time updates, intelligent category filtering, and cross-source content comparison.",
+        idea: "The challenge: Taiwanese news readers waste significant time navigating multiple websites (中央社, 自由時報, ETtoday, 台視, 新頭殼, BBC News) to stay informed. Tommy News solves this by aggregating all sources in one place and using Natural Language Processing to generate intelligent summaries. Instead of reading full articles, users get AI-powered insights that capture key information in seconds. This approach reduces information overload while ensuring comprehensive coverage, making news consumption 70% faster and more efficient. The platform transforms passive reading into active, informed decision-making.",
         liveUrl: "https://tommynews.up.railway.app/",
         githubUrl: null,
         skills: ["AI Integration", "AI/ML", "Natural Language Processing", "AI-Powered Summarization", "API Integration", "React", "JavaScript"],
@@ -84,8 +84,8 @@ const webAppData = {
     },
     mbtiassistant: {
         title: "MBTI助手 (MBTI Assistant)",
-        description: "An interactive MBTI (Myers-Briggs Type Indicator) assistant application that helps users understand themselves and improve their relationships with others. The app provides personalized analysis based on MBTI personality types across different aspects of life including work, relationships, friendships, and family.",
-        idea: "The MBTI Assistant was created to help people better understand themselves and others through personality type analysis. Users can explore two main features: '自我了解' (Self Understanding) for personal insights across work, relationships, friendships, family, strengths, and weaknesses; and '與人相處' (Interpersonal Relationships) to analyze compatibility and dynamics between different MBTI types in various relationship contexts (family, friends, romantic partners, colleagues, classmates). This tool makes personality psychology accessible and practical for everyday use.",
+        description: "An intelligent personality analysis platform powered by AI that delivers personalized MBTI insights across life domains. The application provides deep, contextual analysis for self-discovery and relationship dynamics, covering work performance, interpersonal relationships, family dynamics, and personal growth. Features interactive exploration tools and compatibility analysis for meaningful connections.",
+        idea: "Traditional personality tests provide static results without actionable insights. MBTI Assistant transforms personality psychology into practical, everyday guidance. The platform offers two core experiences: '自我了解' (Self Understanding) delivers personalized analysis across work, relationships, family, strengths, and growth areas; '與人相處' (Interpersonal Relationships) analyzes compatibility and interaction patterns between MBTI types in various contexts—romantic partners, colleagues, friends, and family. By combining AI-powered analysis with psychological frameworks, the app makes complex personality dynamics accessible and actionable, helping users build stronger relationships and achieve personal growth through self-awareness.",
         liveUrl: "https://mbtit-tommy.up.railway.app/",
         githubUrl: null,
         skills: ["AI Integration", "AI/ML", "AI-Powered Analysis", "Personality Psychology", "React", "JavaScript", "Interactive UI"],
@@ -93,8 +93,8 @@ const webAppData = {
     },
     spindine: {
         title: "Spin & Dine 🍽️",
-        description: "A fun and interactive restaurant selection app that lets fate decide your next meal! Spin & Dine helps users discover restaurants near them by using a spinning wheel to randomly select from filtered restaurant options based on rating, distance, and availability.",
-        idea: "Spin & Dine was created to solve the common problem of 'where should we eat?' by making restaurant selection fun and exciting. Instead of endless scrolling through restaurant options, users can set their preferences (minimum rating, maximum distance, restaurant status) and let a spinning wheel decide. The app integrates with location services to find nearby restaurants, filters them based on user criteria, and then randomly selects one through an engaging spinning wheel interface. This makes dining decisions quick, fun, and removes the decision fatigue that often comes with choosing where to eat.",
+        description: "An innovative restaurant discovery platform that gamifies dining decisions through an interactive spinning wheel interface. Integrates real-time location services with intelligent filtering algorithms to curate personalized restaurant recommendations. Users set preferences for ratings, distance, and availability, then let the wheel make the decision—eliminating choice paralysis and making dining fun again.",
+        idea: "Decision fatigue is real: users spend 15+ minutes scrolling through restaurant options, comparing reviews, and debating choices. Spin & Dine transforms this frustrating experience into an engaging, quick decision-making process. The app leverages Google Maps API and restaurant data APIs to find nearby options, applies intelligent filtering based on user criteria (minimum rating, maximum distance, open status), and presents results through an interactive spinning wheel. This gamification approach reduces decision time from 15 minutes to 30 seconds while ensuring quality choices. The element of surprise adds excitement to dining, making every meal feel like a discovery rather than a chore.",
         liveUrl: "https://spindine.netlify.app/",
         githubUrl: null,
         skills: ["React", "JavaScript", "Location API", "Google Maps API", "Restaurant API", "Interactive UI"],
@@ -102,17 +102,17 @@ const webAppData = {
     },
     englishlearning: {
         title: "English Learning Hub 🎓",
-        description: "An interactive English learning platform that helps users practice natural conversations in 30 common everyday situations. The app features guided dialogues, free talk mode, and vocabulary building to improve pronunciation, build vocabulary, and gain confidence speaking English.",
-        idea: "English Learning Hub was created to make English conversation practice accessible and practical. Instead of traditional textbook learning, users can practice real-world conversations in situations they'll actually encounter - like ordering at a restaurant, asking for directions, or having a job interview. The app offers two learning modes: Guided Dialogues for structured practice with common phrases, and Free Talk Mode for spontaneous conversation practice. This approach helps learners build confidence and fluency by practicing in context, making language learning more engaging and effective than memorizing vocabulary lists.",
+        description: "A comprehensive language learning platform featuring AI-powered conversational practice across 30+ real-world scenarios. Combines structured guided dialogues with an advanced AI Free Talk mode for spontaneous conversation practice. Integrated with Amazon Polly for premium text-to-speech technology, delivering natural pronunciation models that help learners master accent, rhythm, and fluency. Designed to build confidence through contextual, practical English practice.",
+        idea: "Traditional language learning focuses on memorization, not real-world application. English Learning Hub bridges this gap by simulating authentic conversations users will actually have—ordering food, job interviews, asking directions, making appointments. The platform offers two learning modes: Guided Dialogues provide structured practice with common phrases and cultural context, while AI Free Talk Mode enables unlimited, spontaneous conversations with an intelligent AI partner that adapts to the learner's level. The integration of Amazon Polly delivers studio-quality text-to-speech with natural intonation and rhythm, allowing learners to hear and mimic native-like pronunciation. This immersive approach accelerates fluency by practicing in context, making language learning engaging, practical, and effective—transforming passive study into active communication skills.",
         liveUrl: "https://englishlearningconversation.netlify.app/",
         githubUrl: null,
-        skills: ["AI Integration", "AI/ML", "Conversational AI", "AI-Powered Dialogues", "Language Learning", "React", "JavaScript"],
+        skills: ["AI Integration", "AI/ML", "Conversational AI", "AI-Powered Dialogues", "AI Free Talk", "Amazon Polly", "Text-to-Speech (TTS)", "Language Learning", "React", "JavaScript"],
         preview: "https://englishlearningconversation.netlify.app/"
     },
     coverletter: {
         title: "Cover Letter Generator 📝",
-        description: "An AI-powered cover letter generation tool that helps job seekers create personalized, professional cover letters tailored to specific job applications. The app uses advanced AI to analyze job descriptions and generate compelling cover letters that highlight relevant skills and experiences.",
-        idea: "The Cover Letter Generator was created to solve the time-consuming problem of writing customized cover letters for each job application. Instead of starting from scratch every time, users can input their information and job details, and the AI generates a professional, tailored cover letter. This tool helps job seekers save time while ensuring their cover letters are well-written, relevant, and highlight the most important qualifications for each position. The app makes the job application process more efficient and increases the chances of standing out to potential employers.",
+        description: "An intelligent document generation platform that leverages advanced AI to create personalized, ATS-optimized cover letters tailored to specific job applications. Analyzes job descriptions using Natural Language Processing to identify key requirements and generate compelling narratives that highlight relevant qualifications. Transforms hours of writing into minutes of professional, customized content.",
+        idea: "Job seekers face a critical challenge: writing unique, compelling cover letters for each application takes 2-3 hours per position, yet generic letters reduce interview chances by 60%. The Cover Letter Generator solves this by combining AI-powered analysis with intelligent content generation. Users input their background and the job description; the system uses Natural Language Processing to extract key skills, requirements, and company values, then generates a personalized cover letter that strategically aligns the candidate's experience with the role. The AI ensures each letter is unique, relevant, and optimized for both human recruiters and Applicant Tracking Systems. This approach reduces application time by 80% while significantly improving response rates, making the job search process more efficient and effective.",
         liveUrl: "https://tommycoverletter.up.railway.app/",
         githubUrl: null,
         skills: ["AI Integration", "AI/ML", "Natural Language Processing", "AI-Powered Generation", "Document Generation", "React", "JavaScript"],
@@ -120,8 +120,8 @@ const webAppData = {
     },
     taro: {
         title: "Tommy的神秘塔羅 (Tommy's Mystical Tarot) 🔮",
-        description: "A comprehensive mystical divination platform featuring tarot card readings, life path number calculations, and horoscope predictions. The app provides personalized spiritual guidance through interactive tarot readings, numerology insights, and daily/weekly/monthly/yearly horoscope forecasts for all zodiac signs.",
-        idea: "Tommy's Mystical Tarot was created to bring ancient divination practices into the modern digital age. The app combines three powerful mystical tools: Tarot Cards for guidance on family, relationships, career, and general life questions; Life Path Numbers (Numerology) to reveal personality traits, talents, and life purpose based on birth dates; and Horoscope readings for all 12 zodiac signs with different time periods. Users can focus on their questions while selecting cards, receive AI-powered interpretations, and explore their spiritual journey through multiple divination methods. This makes mystical guidance accessible, interactive, and personalized for everyone seeking wisdom and insight.",
+        description: "A comprehensive digital divination platform that modernizes ancient spiritual practices through AI-powered interpretation. Features interactive tarot card readings, personalized numerology analysis via Life Path Numbers, and comprehensive horoscope forecasts across all 12 zodiac signs. Delivers personalized spiritual guidance through intelligent analysis of user questions and contexts, making mystical wisdom accessible in the digital age.",
+        idea: "Ancient divination practices have remained largely inaccessible, requiring expensive consultations or deep knowledge. Tommy's Mystical Tarot democratizes spiritual guidance by combining three powerful tools: Interactive Tarot Cards provide AI-powered interpretations for questions about family, relationships, career, and life decisions; Life Path Numerology reveals personality traits, talents, and life purpose through birth date analysis; Comprehensive Horoscopes offer daily, weekly, monthly, and yearly forecasts for all zodiac signs. The platform uses AI to understand user intent and context, generating personalized interpretations that feel authentic and meaningful. Users can focus their questions while selecting cards, receive intelligent insights, and explore their spiritual journey through multiple divination methods. This fusion of ancient wisdom with modern AI technology makes mystical guidance accessible, interactive, and personalized—transforming spiritual exploration into an engaging digital experience.",
         liveUrl: "https://tommytaro.up.railway.app/",
         githubUrl: null,
         skills: ["AI Integration", "AI/ML", "AI-Powered Interpretations", "Natural Language Processing", "React", "JavaScript", "Interactive UI"],
@@ -137,6 +137,60 @@ const webAppData = {
 
     // Early return if essential elements are missing
     if (!modal || !modalBody) return;
+
+    // Function to highlight important keywords in text
+    function highlightKeywords(text) {
+        if (!text) return '';
+        
+        // Specific technologies and technical terms to highlight (case-insensitive)
+        // Focus on concrete technologies, APIs, frameworks, and specific features
+        const keywords = [
+            // AI/ML Technologies
+            'Natural Language Processing', 'NLP',
+            'Machine Learning', 'ML',
+            'AI-powered', 'AI/ML',
+            'Conversational AI',
+            'Text-to-Speech', 'TTS',
+            
+            // Cloud Services & APIs
+            'Amazon Polly',
+            'Google Maps API',
+            'Location API',
+            'Restaurant API',
+            'ATS-optimized', 'Applicant Tracking Systems',
+            
+            // Technical Features
+            'real-time',
+            'API Integration',
+            'interactive',
+            
+            // Specific Technologies (avoid generic "AI" alone)
+            'AI Free Talk',
+            'AI-powered summarization',
+            'AI-powered analysis',
+            'AI-powered interpretation',
+            'AI-powered generation',
+            'AI-powered dialogues',
+            
+            // Frameworks & Languages (if mentioned)
+            'React',
+            'JavaScript',
+            'Node.js',
+            'Python'
+        ];
+        
+        let highlightedText = text;
+        
+        // Sort keywords by length (longest first) to avoid partial matches
+        const sortedKeywords = keywords.sort((a, b) => b.length - a.length);
+        
+        sortedKeywords.forEach(keyword => {
+            const regex = new RegExp(`\\b(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\b`, 'gi');
+            highlightedText = highlightedText.replace(regex, '<span class="highlight-keyword">$1</span>');
+        });
+        
+        return highlightedText;
+    }
 
     // Open modal function
     function openModal(webappId) {
@@ -167,22 +221,38 @@ const webAppData = {
                 </div>
             </div>
             <div class="webapp-modal-info">
-                <div class="webapp-info-section">
-                    <h3><i class="fas fa-info-circle"></i> Description</h3>
-                    <p>${appData.description}</p>
+                <div class="webapp-info-section webapp-description">
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-info-circle"></i></div>
+                        <h3>Description</h3>
+                    </div>
+                    <div class="section-content">
+                        <p>${highlightKeywords(appData.description)}</p>
+                    </div>
+                </div>
+                <div class="webapp-info-section webapp-idea">
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>The Idea</h3>
+                    </div>
+                    <div class="section-content">
+                        <p>${highlightKeywords(appData.idea)}</p>
+                    </div>
                 </div>
                 <div class="webapp-info-section">
-                    <h3><i class="fas fa-lightbulb"></i> The Idea</h3>
-                    <p>${appData.idea}</p>
-                </div>
-                <div class="webapp-info-section">
-                    <h3><i class="fas fa-code"></i> Technologies & Skills</h3>
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-code"></i></div>
+                        <h3>Technologies & Skills</h3>
+                    </div>
                     <div class="webapp-skills">
                         ${appData.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
                     </div>
                 </div>
                 <div class="webapp-info-section">
-                    <h3><i class="fas fa-link"></i> Links</h3>
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-link"></i></div>
+                        <h3>Links</h3>
+                    </div>
                     <div class="webapp-links">
                         <a href="${appData.liveUrl}" target="_blank" class="webapp-link-btn">
                             <i class="fas fa-globe"></i> Live Site

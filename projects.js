@@ -11,8 +11,6 @@
 
 const projectsBtn = document.getElementsByClassName('btn-hover')
 
-const trialByFireBtn = document.getElementById('trialbyfire-btn');
-const trialByFirePage = document.getElementById('TrialByFire');
 const readyToRobBtn = document.getElementById('readytorob-btn');
 const readyToRobPage = document.getElementById('ReadyToRob');
 const villageRevengerBtn = document.getElementById('villagerevenger-btn');
@@ -25,12 +23,6 @@ const futureMissionBtn = document.getElementById('futuremission-btn');
 const futureMissionPage = document.getElementById('FutureMission');
 const controlElement = document.querySelector('.control')
 
-
-if (trialByFireBtn && trialByFirePage) {
-    trialByFireBtn.addEventListener('click', ()=>{
-        change(trialByFirePage, '#trial-by-fire-btn')
-    })
-}
 
 if (readyToRobBtn && readyToRobPage) {
     readyToRobBtn.addEventListener('click', function(){
